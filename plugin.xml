@@ -159,4 +159,15 @@
         </js-module>
     </platform>    
 
+    <!-- tizen -->
+    <platform name="tizen">
+        <config-file target="config.xml" parent="/*">
+            <tizen:privilege name="http://tizen.org/privilege/contact.read"/>
+            <tizen:privilege name="http://tizen.org/privilege/contact.write"/>
+        </config-file>
+        <js-module src="src/tizen/ContactsProxy.js" name="ContactsProxy">
+            <runs />
+        </js-module>
+    </platform>
+
 </plugin>

@@ -168,6 +168,9 @@
         <js-module src="src/tizen/ContactsProxy.js" name="ContactsProxy">
             <runs />
         </js-module>
+        <js-module src="src/tizen/ContactUtils.js" name="ContactUtils">
+            <runs />
+        </js-module>
     </platform>
 
 </plugin>

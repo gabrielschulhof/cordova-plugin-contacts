@@ -599,8 +599,18 @@ module.exports = {
 				}
 			});
 	},
-	remove: function() {
-		var x;
+	remove: function( successCallback, failureCallback, args ) {
+		try {
+			addressBook.remove( args[ 0 ] );
+			if ( typeof successCallback === "function" ) {
+				successCallback();
+			}
+		} catch( error ) {
+			console.log( "ContactsProxy: remove: Error removing contact: " + error.name );
+			if ( typeof failureCallback === "function" ) {
+				failureCallback( new ContactError( ContactError.UNKNOWN_ERROR ) );
+			}
+		}
 	},
 	search: function( successCallback, failureCallback, args ) {
 		var cordovaContact,
